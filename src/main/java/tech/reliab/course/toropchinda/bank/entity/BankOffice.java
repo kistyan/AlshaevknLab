@@ -7,7 +7,7 @@ public class BankOffice {
 	}
 
 	private int id, atmCount;
-	private float amountMoney, rentPrice;
+	private double amountMoney, rentPrice;
 	private String name, address;
 	private Status status;
 	private boolean isPossibleToPlaceAtm, isGivingLoan, isReceivingMoney, isGivingMoney;
@@ -43,22 +43,22 @@ public class BankOffice {
 	}
 
 	// Возвращает количество денег в офиса банка
-	public float getAmountMoney() {
+	public double getAmountMoney() {
 		return amountMoney;
 	}
 
 	// Присваивает количеству денег в офиса банка значение amountMoney
-	public void setAmountMoney(float amountMoney) {
+	public void setAmountMoney(double amountMoney) {
 		this.amountMoney = amountMoney;
 	}
 
 	// Возвращает цену аренды офиса банка
-	public float getRentPrice() {
+	public double getRentPrice() {
 		return rentPrice;
 	}
 
 	// Присваивает цене аренды офиса банка значение rentPrice
-	public void setRentPrice(float rentPrice) {
+	public void setRentPrice(double rentPrice) {
 		this.rentPrice = rentPrice;
 	}
 

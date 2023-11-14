@@ -7,7 +7,7 @@ public class User {
 	private int id;
 	private String fullName, workPlace;
 	private Date birthDate;
-	private float monthlyIncome, creditRating;
+	private double monthlyIncome, creditRating;
 	private ArrayList<Bank> banks;
 	private ArrayList<CreditAccount> creditAccounts;
 	private ArrayList<PaymentAccount> paymentAccounts;
@@ -17,7 +17,8 @@ public class User {
 		this.fullName = fullName;
 		this.birthDate = birthDate;
 		workPlace = new String();
-		monthlyIncome = creditRating = 0;
+		monthlyIncome = Math.random() * 10_000;
+		creditRating = monthlyIncome / 10 + 100 * (Math.random() - 1);
 		banks = new ArrayList<>();
 		creditAccounts = new ArrayList<>();
 		paymentAccounts = new ArrayList<>();
@@ -64,22 +65,22 @@ public class User {
 	}
 
 	// Возвращает ежемесячный доход пользователся
-	public float getMonthlyIncome() {
+	public double getMonthlyIncome() {
 		return monthlyIncome;
 	}
 
 	// Присваивает ежемесячному доходу пользователся значение monthlyIncome
-	public void setMonthlyIncome(float monthlyIncome) {
+	public void setMonthlyIncome(double monthlyIncome) {
 		this.monthlyIncome = monthlyIncome;
 	}
 
 	// Возвращает кредитный рейтинг пользователя
-	public float getCreditRating() {
+	public double getCreditRating() {
 		return creditRating;
 	}
 
 	// Присваивает кредитному рейтингу пользователя значение creditRating
-	public void setCreditRating(float creditRating) {
+	public void setCreditRating(double creditRating) {
 		this.creditRating = creditRating;
 	}
 

@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class CreditAccount {
 	private int id, monthNumber;
-	private float creditAmount, monthlyPayment, interestRate;
+	private double creditAmount, monthlyPayment, interestRate;
 	private User user;
 	private String bankName;
 	private Date startDate, endDate;
@@ -42,32 +42,32 @@ public class CreditAccount {
 	}
 
 	// Возвращает сумму кредита
-	public float getCreditAmount() {
+	public double getCreditAmount() {
 		return creditAmount;
 	}
 
 	// Присваивает сумме кредита значение creditAmount
-	public void setCreditAmount(float creditAmount) {
+	public void setCreditAmount(double creditAmount) {
 		this.creditAmount = creditAmount;
 	}
 
 	// Возвращает сумму ежемесячного платежа
-	public float getMonthlyPayment() {
+	public double getMonthlyPayment() {
 		return monthlyPayment;
 	}
 
 	// Присваивает сумме ежемесячного платежа значение monthlyPayment
-	public void setMonthlyPayment(float monthlyPayment) {
+	public void setMonthlyPayment(double monthlyPayment) {
 		this.monthlyPayment = monthlyPayment;
 	}
 
 	// Возвращает процентную ставку
-	public float getInterestRate() {
+	public double getInterestRate() {
 		return interestRate;
 	}
 
 	// Присваивает процентной ставке значение interestRate
-	public void setInterestRate(float interestRate) {
+	public void setInterestRate(double interestRate) {
 		this.interestRate = interestRate;
 	}
 

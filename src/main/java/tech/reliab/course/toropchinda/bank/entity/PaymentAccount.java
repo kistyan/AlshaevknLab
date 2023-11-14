@@ -4,7 +4,7 @@ public class PaymentAccount {
 	private int id;
 	private User user;
 	private String bankName;
-	private float moneyAmount;
+	private double moneyAmount;
 
 	public PaymentAccount(int id, User user, String bankName) {
 		this.id = id;
@@ -44,12 +44,12 @@ public class PaymentAccount {
 	}
 
 	// Возвращает денежную сумму на счету
-	public float getMoneyAmount() {
+	public double getMoneyAmount() {
 		return moneyAmount;
 	}
 
 	// Присваивает денежной сумме на счету значение moneyAmount
-	public void setMoneyAmount(float moneyAmount) {
+	public void setMoneyAmount(double moneyAmount) {
 		this.moneyAmount = moneyAmount;
 	}
 }

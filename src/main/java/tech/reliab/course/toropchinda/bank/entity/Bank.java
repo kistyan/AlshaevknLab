@@ -2,14 +2,17 @@ package tech.reliab.course.toropchinda.bank.entity;
 
 public class Bank {
 	private int id, officeCount, atmCount, employeeCount, clientCount;
-	private float rating, totalMoney, interestRate;
+	private double rating, totalMoney, interestRate;
 	private String name;
 
 	public Bank(int id, String name) {
 		this.id = id;
 		this.name = name;
 		officeCount = atmCount = employeeCount = clientCount = 0;
-		rating = totalMoney = interestRate = 0;
+		double normalizedRating = Math.random();
+		rating = normalizedRating * 100;
+		totalMoney = Math.random() * 1_000_000;
+		interestRate = Math.random() * 20 * normalizedRating;
 	}
 
 	// Возвращает идентификатор банка
@@ -73,32 +76,32 @@ public class Bank {
 	}
 
 	// Возвращает рейтинг банка
-	public float getRating() {
+	public double getRating() {
 		return rating;
 	}
 
 	// Присваивает рейтингу банка значение rating
-	public void setRating(float rating) {
+	public void setRating(double rating) {
 		this.rating = rating;
 	}
 
 	// Возвращает общее количество денег в банке
-	public float getTotalMoney() {
+	public double getTotalMoney() {
 		return totalMoney;
 	}
 
 	// Присваивает общему количеству денег в банке значение totalMoney
-	public void setTotalMoney(float totalMoney) {
+	public void setTotalMoney(double totalMoney) {
 		this.totalMoney = totalMoney;
 	}
 
 	// Возвращает процентную ставку банка
-	public float getInterestRate() {
+	public double getInterestRate() {
 		return interestRate;
 	}
 
 	// Присваивает процентной ставке банка значение interestRate
-	public void setInterestRate(float interestRate) {
+	public void setInterestRate(double interestRate) {
 		this.interestRate = interestRate;
 	}
 }

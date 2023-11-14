@@ -9,7 +9,7 @@ public class Employee {
 	private Bank bank;
 	private BankOffice office;
 	private boolean isWorksRemotely, isGivingLoan;
-	private float salary;
+	private double salary;
 
 	public Employee(int id, String fullName, Date birthDate) {
 		this.id = id;
@@ -103,12 +103,12 @@ public class Employee {
 	}
 
 	// Возвращает размер заработной платы сотрудника
-	public float getSalary() {
+	public double getSalary() {
 		return salary;
 	}
 
 	// Присваивает размеру заработной платы сотрудника значение salary
-	public void setSalary(float salary) {
+	public void setSalary(double salary) {
 		this.salary = salary;
 	}
 }

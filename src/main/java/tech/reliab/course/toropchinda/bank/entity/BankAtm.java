@@ -8,7 +8,7 @@ public class BankAtm {
 	}
 
 	private int id;
-	private float moneyAmount, servicePrice;
+	private double moneyAmount, servicePrice;
 	private String name, address;
 	private Status status;
 	private Bank bank;
@@ -39,22 +39,22 @@ public class BankAtm {
 	}
 
 	// Возвращает количество денег в банкомате
-	public float getMoneyAmount() {
+	public double getMoneyAmount() {
 		return moneyAmount;
 	}
 
 	// Присваивает количеству денег банкомата значение moneyAmount
-	public void setMoneyAmount(float moneyAmount) {
+	public void setMoneyAmount(double moneyAmount) {
 		this.moneyAmount = moneyAmount;
 	}
 
 	// Возвращает цену обслуживания банкомата
-	public float getServicePrice() {
+	public double getServicePrice() {
 		return servicePrice;
 	}
 
 	// Присваивает цене обслуживания банкомата значение servicePrice
-	public void setServicePrice(float servicePrice) {
+	public void setServicePrice(double servicePrice) {
 		this.servicePrice = servicePrice;
 	}
 
