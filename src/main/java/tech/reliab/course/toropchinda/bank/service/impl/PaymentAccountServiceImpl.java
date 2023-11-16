@@ -7,6 +7,7 @@ import tech.reliab.course.toropchinda.bank.service.PaymentAccountService;
 import java.util.ArrayList;
 import java.util.function.Function;
 import java.util.function.Consumer;
+import java.util.Collections;
 
 public class PaymentAccountServiceImpl implements PaymentAccountService {
 	private static final PaymentAccountServiceImpl INSTANCE = new PaymentAccountServiceImpl();
@@ -49,5 +50,18 @@ public class PaymentAccountServiceImpl implements PaymentAccountService {
 		for (PaymentAccount paymentAccount : paymentAccounts)
 			if (filter.apply(paymentAccount) == true)
 				action.accept(paymentAccount);
+	}
+
+	@Override
+	public int getFreeId() {
+		Collections.sort(paymentAccounts, (first, second) -> first.getId() - second.getId());
+		int freeId = 0;
+		for (PaymentAccount paymentAccount : paymentAccounts)
+			if (paymentAccount.getId() == freeId)
+				freeId++;
+			else
+				if (freeId < paymentAccount.getId())
+					break;
+		return freeId;
 	}
 }

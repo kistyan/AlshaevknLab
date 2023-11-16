@@ -6,6 +6,7 @@ import tech.reliab.course.toropchinda.bank.service.BankOfficeService;
 import java.util.ArrayList;
 import java.util.function.Function;
 import java.util.function.Consumer;
+import java.util.Collections;
 
 public class BankOfficeServiceImpl implements BankOfficeService {
 	private static final BankOfficeServiceImpl INSTANCE = new BankOfficeServiceImpl();
@@ -48,5 +49,18 @@ public class BankOfficeServiceImpl implements BankOfficeService {
 		for (BankOffice bankOffice : bankOffices)
 			if (filter.apply(bankOffice) == true)
 				action.accept(bankOffice);
+	}
+
+	@Override
+	public int getFreeId() {
+		Collections.sort(bankOffices, (first, second) -> first.getId() - second.getId());
+		int freeId = 0;
+		for (BankOffice bankOffice : bankOffices)
+			if (bankOffice.getId() == freeId)
+				freeId++;
+			else
+				if (freeId < bankOffice.getId())
+					break;
+		return freeId;
 	}
 }

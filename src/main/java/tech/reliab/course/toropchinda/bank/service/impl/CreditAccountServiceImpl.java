@@ -9,6 +9,7 @@ import tech.reliab.course.toropchinda.bank.service.CreditAccountService;
 import java.util.ArrayList;
 import java.util.function.Function;
 import java.util.function.Consumer;
+import java.util.Collections;
 
 public class CreditAccountServiceImpl implements CreditAccountService {
 	private static final CreditAccountServiceImpl INSTANCE = new CreditAccountServiceImpl();
@@ -51,5 +52,18 @@ public class CreditAccountServiceImpl implements CreditAccountService {
 		for (CreditAccount creditAccount : creditAccounts)
 			if (filter.apply(creditAccount) == true)
 				action.accept(creditAccount);
+	}
+
+	@Override
+    public int getFreeId() {
+		Collections.sort(creditAccounts, (first, second) -> first.getId() - second.getId());
+		int freeId = 0;
+		for (CreditAccount creditAccount : creditAccounts)
+			if (creditAccount.getId() == freeId)
+				freeId++;
+			else
+				if (freeId < creditAccount.getId())
+					break;
+		return freeId;
 	}
 }

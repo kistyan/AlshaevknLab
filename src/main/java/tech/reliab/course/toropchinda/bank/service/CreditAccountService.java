@@ -17,4 +17,6 @@ public interface CreditAccountService {
 	ArrayList<CreditAccount> remove(Function<CreditAccount, Boolean> filter);
 
 	void update(Function<CreditAccount, Boolean> filter, Consumer<CreditAccount> action);
+
+	int getFreeId();
 }

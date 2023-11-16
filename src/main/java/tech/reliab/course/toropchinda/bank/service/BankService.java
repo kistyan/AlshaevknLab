@@ -14,4 +14,6 @@ public interface BankService {
 	ArrayList<Bank> remove(Function<Bank, Boolean> filter);
 
 	void update(Function<Bank, Boolean> filter, Consumer<Bank> action);
+
+	int getFreeId();
 }

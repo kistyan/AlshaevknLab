@@ -15,4 +15,6 @@ public interface PaymentAccountService {
 	ArrayList<PaymentAccount> remove(Function<PaymentAccount, Boolean> filter);
 
 	void update(Function<PaymentAccount, Boolean> filter, Consumer<PaymentAccount> action);
+
+	int getFreeId();
 }

@@ -18,4 +18,6 @@ public interface UserService {
 	ArrayList<User> remove(Function<User, Boolean> filter);
 
 	void update(Function<User, Boolean> filter, Consumer<User> action);
+
+	int getFreeId();
 }

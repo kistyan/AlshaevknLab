@@ -10,6 +10,7 @@ import java.util.Date;
 import java.util.ArrayList;
 import java.util.function.Function;
 import java.util.function.Consumer;
+import java.util.Collections;
 
 public class UserServiceImpl implements UserService {
 	private static final UserServiceImpl INSTANCE = new UserServiceImpl();
@@ -52,5 +53,18 @@ public class UserServiceImpl implements UserService {
 		for (User user : users)
 			if (filter.apply(user) == true)
 				action.accept(user);
+	}
+
+	@Override
+	public int getFreeId() {
+		Collections.sort(users, (first, second) -> first.getId() - second.getId());
+		int freeId = 0;
+		for (User user : users)
+			if (user.getId() == freeId)
+				freeId++;
+			else
+				if (freeId < user.getId())
+					break;
+		return freeId;
 	}
 }

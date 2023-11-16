@@ -9,6 +9,7 @@ import tech.reliab.course.toropchinda.bank.service.BankAtmService;
 import java.util.ArrayList;
 import java.util.function.Function;
 import java.util.function.Consumer;
+import java.util.Collections;
 
 public class BankAtmServiceImpl implements BankAtmService {
 	private static final BankAtmServiceImpl INSTANCE = new BankAtmServiceImpl();
@@ -51,5 +52,18 @@ public class BankAtmServiceImpl implements BankAtmService {
 		for (BankAtm bankAtm : bankAtms)
 			if (filter.apply(bankAtm) == true)
 				action.accept(bankAtm);
+	}
+
+	@Override
+	public int getFreeId() {
+		Collections.sort(bankAtms, (first, second) -> first.getId() - second.getId());
+		int freeId = 0;
+		for (BankAtm bankAtm : bankAtms)
+			if (bankAtm.getId() == freeId)
+				freeId++;
+			else
+				if (freeId < bankAtm.getId())
+					break;
+		return freeId;
 	}
 }

@@ -14,4 +14,6 @@ public interface BankOfficeService {
 	ArrayList<BankOffice> remove(Function<BankOffice, Boolean> filter);
 
 	void update(Function<BankOffice, Boolean> filter, Consumer<BankOffice> action);
+
+	int getFreeId();
 }

@@ -9,6 +9,7 @@ import java.util.Date;
 import java.util.ArrayList;
 import java.util.function.Function;
 import java.util.function.Consumer;
+import java.util.Collections;
 
 public class EmployeeServiceImpl implements EmployeeService {
 	private static final EmployeeServiceImpl INSTANCE = new EmployeeServiceImpl();
@@ -51,5 +52,18 @@ public class EmployeeServiceImpl implements EmployeeService {
 		for (Employee employee : employees)
 			if (filter.apply(employee) == true)
 				action.accept(employee);
+	}
+
+	@Override
+	public int getFreeId() {
+		Collections.sort(employees, (first, second) -> first.getId() - second.getId());
+		int freeId = 0;
+		for (Employee employee : employees)
+			if (employee.getId() == freeId)
+				freeId++;
+			else
+				if (freeId < employee.getId())
+					break;
+		return freeId;
 	}
 }

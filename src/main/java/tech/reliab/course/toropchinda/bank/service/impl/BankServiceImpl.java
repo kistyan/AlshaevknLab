@@ -6,6 +6,7 @@ import tech.reliab.course.toropchinda.bank.service.BankService;
 import java.util.ArrayList;
 import java.util.function.Function;
 import java.util.function.Consumer;
+import java.util.Collections;
 
 public class BankServiceImpl implements BankService {
 	private static final BankServiceImpl INSTANCE = new BankServiceImpl();
@@ -48,5 +49,18 @@ public class BankServiceImpl implements BankService {
 		for (Bank bank : banks)
 			if (filter.apply(bank) == true)
 				action.accept(bank);
+	}
+
+	@Override
+	public int getFreeId() {
+		Collections.sort(banks, (first, second) -> first.getId() - second.getId());
+		int freeId = 0;
+		for (Bank bank : banks)
+			if (bank.getId() == freeId)
+				freeId++;
+			else
+				if (freeId < bank.getId())
+					break;
+		return freeId;
 	}
 }

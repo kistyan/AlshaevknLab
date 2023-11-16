@@ -17,4 +17,6 @@ public interface EmployeeService {
 	ArrayList<Employee> remove(Function<Employee, Boolean> filter);
 
 	void update(Function<Employee, Boolean> filter, Consumer<Employee> action);
+
+	int getFreeId();
 }

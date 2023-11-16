@@ -142,7 +142,7 @@ public class Main {
 		UserServiceImpl userService = UserServiceImpl.getInstance();
 
 		for (int bankIndex = 0; bankIndex < 5; bankIndex++) {
-			Bank bank = bankService.insert(0, "BANK_" + bankIndex);
+			Bank bank = bankService.insert(bankIndex, "BANK_" + bankIndex);
 			for (int atmIndex = 0; atmIndex < 3; atmIndex++) {
 				int atmId = 3 * bankIndex + atmIndex;
 			}
@@ -183,8 +183,9 @@ public class Main {
 			bank.setClientCount(5);
 		}
 
+		bankService.getFreeId();
 
-		Menu mainMenu = new Menu("Main menu");
+		Menu mainMenu = new Menu("┌──┬──┬─────┬─────┬──┐┌─┐  ┌──┬──┬─────┬──┐┌─┬─┐ ┌─┐\n│  ╵  │ ╶─╴ ├─┐ ┌─┤  └┤ │  │  ╵  │ ╶───┤  └┤ │ │ │ │\n│ ╷ ╷ │ ┌─┐ ├─┘ └─┤ ├┐  │  │ ╷ ╷ │ ╶───┤ ├┐  │ └─┘ │\n└─┴─┴─┴─┘ └─┴─────┴─┘└──┘  └─┴─┴─┴─────┴─┘└──┴─────┘");
 		mainMenu.addEntry(new Menu.Entry("Exit") {
 			@Override
 			public void run() {
@@ -192,7 +193,7 @@ public class Main {
 			}
 		});
 
-		Menu banksMenu = new Menu("Banks");
+		Menu banksMenu = new Menu("┌────┐┌─────┬──┐┌─┬─┬───┬─────┐\n│ ╶╴ └┤ ╶─╴ │  └┤ │ ╵ ┌─┤ ╶───┤\n│ ╶─╴ │ ┌─┐ │ ├┐  │ ╷ └─┼───╴ │\n└─────┴─┘ └─┴─┘└──┴─┴───┴─────┘");
 		banksMenu.addEntry(new Menu.Entry("Back") {
 			@Override
 			public void run() {
@@ -229,7 +230,7 @@ public class Main {
 			}
 		});
 
-		Menu usersMenu = new Menu("Users");
+		Menu usersMenu = new Menu("┌─┐ ┌─┬─────┬─────┬────┐┌─────┐\n│ │ │ │ ╶───┤ ╶───┤ ╶╴ └┤ ╶───┤\n│ └─┘ ├───╴ │ ╶───┤ ┌─┐ ├───╴ │\n└─────┴─────┴─────┴─┘ └─┴─────┘");
 		usersMenu.addEntry(new Menu.Entry("Back") {
 			@Override
 			public void run() {
