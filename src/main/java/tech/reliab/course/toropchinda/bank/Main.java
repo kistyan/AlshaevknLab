@@ -105,30 +105,37 @@ public class Main {
 	}
 
 	private static void printBank(Bank bank) {
+		System.out.println(bank);
 		System.out.printf("{\n    \"id\": %d,\n    \"name\": \"%s\",\n    \"officeCount\": %d,\n    \"atmCount\": %d,\n    \"employeeCount\": %d,\n    \"clientCount\": %d,\n    \"rating\": %.2f,\n    \"totalMoney\": %.2f,\n    \"interestRate\": %.2f\n}\n", bank.getId(), bank.getName(), bank.getOfficeCount(), bank.getAtmCount(), bank.getEmployeeCount(), bank.getClientCount(), bank.getRating(), bank.getTotalMoney(), bank.getInterestRate());
 	}
 
 	private static void printBankAtm(BankAtm bankAtm) {
+		System.out.println(bankAtm);
 		System.out.printf("{\n    \"id\": %d,\n    \"name\": \"%s\",\n    \"moneyAmount\": %.2f,\n    \"servicePrice\": %.2f,\n    \"address\": \"%s\",\n    \"status\": \"%s\",\n    \"bank\": \"%s\",\n    \"location\": \"%s\",\n    \"serviceEmployee\": \"%s\",\n    \"isReceivingMoney\": %b,\n    \"isGivingMoney\": %b\n}\n", bankAtm.getId(), bankAtm.getName(), bankAtm.getMoneyAmount(), bankAtm.getServicePrice(), bankAtm.getAddress(), bankAtm.getStatus(), bankAtm.getBank(), bankAtm.getLocation(), bankAtm.getServiceEmployee(), bankAtm.isReceivingMoney(), bankAtm.isGivingMoney());
 	}
 
 	private static void printBankOffice(BankOffice bankOffice) {
+		System.out.println(bankOffice);
 		System.out.printf("{\n    \"id\": %d,\n    \"name\": \"%s\",\n    \"atmCount\": %d,\n    \"amountMoney\": %.2f,\n    \"rentPrice\": %.2f,\n    \"address\": \"%s\",\n    \"status\": \"%s\",\n    \"isPossibleToPlaceAtm\": %b,\n    \"isGivingLoan\": %b,\n    \"isReceivingMoney\": %b,\n    \"isGivingMoney\": %b\n}\n", bankOffice.getId(), bankOffice.getName(), bankOffice.getAtmCount(), bankOffice.getAmountMoney(), bankOffice.getRentPrice(), bankOffice.getAddress(), bankOffice.getStatus(), bankOffice.isPossibleToPlaceAtm(), bankOffice.isGivingLoan(), bankOffice.isReceivingMoney(), bankOffice.isGivingMoney());
 	}
 
 	private static void printCreditAccount(CreditAccount creditAccount) {
+		System.out.println(creditAccount);
 		System.out.printf("{\n    \"id\": %d,\n    \"monthNumber\": %d,\n    \"creditAmount\": %.2f,\n    \"monthlyPayment\": %.2f,\n    \"interestRate\": %.2f,\n    \"user\": \"%s\",\n    \"bankName\": \"%s\",\n    \"startDate\": \"%s\",\n    \"endDate\": \"%s\",\n    \"employee\": \"%s\",\n    \"paymentAccount\": \"%s\"\n}\n", creditAccount.getId(), creditAccount.getMonthNumber(), creditAccount.getCreditAmount(), creditAccount.getMonthlyPayment(), creditAccount.getInterestRate(), creditAccount.getUser(), creditAccount.getBankName(), creditAccount.getStartDate(), creditAccount.getEndDate(), creditAccount.getEmployee(), creditAccount.getPaymentAccount());
 	}
 
 	private static void printEmployee(Employee employee) {
+		System.out.println(employee);
 		System.out.printf("{\n    \"id\": %d,\n    \"fullName\": \"%s\",\n    \"jobTitle\": \"%s\",\n    \"birthDate\": \"%s\",\n    \"bank\": %s,\n    \"office\": %s,\n    \"isWorksRemotely\": %b,\n    \"isGivingLoan\": %b,\n    \"salary\": %.2f\n}\n", employee.getId(), employee.getFullName(), employee.getJobTitle(), employee.getBirthDate(), employee.getBank(), employee.getOffice(), employee.isWorksRemotely(), employee.isGivingLoan(), employee.getSalary());
 	}
 
 	private static void printPaymentAccount(PaymentAccount paymentAccount) {
+		System.out.println(paymentAccount);
 		System.out.printf("{\n    \"id\": %d,\n    \"user\": %s,\n    \"bankName\": \"%s\",\n    \"moneyAmount\": %.2f\n}\n", paymentAccount.getId(), paymentAccount.getUser(), paymentAccount.getBankName(), paymentAccount.getMoneyAmount());
 	}
 
 	private static void printUser(User user) {
+		System.out.println(user);
 		System.out.printf("{\n    \"id\": %d,\n    \"fullName\": \"%s\",\n    \"workPlace\": \"%s\",\n    \"birthDate\": \"%s\",\n    \"monthlyIncome\": %.2f,\n    \"creditRating\": %.2f,\n    \"banks\": %s,\n    \"creditAccounts\": %s,\n    \"paymentAccounts\": %s\n}\n", user.getId(), user.getFullName(), user.getWorkPlace(), user.getBirthDate(), user.getMonthlyIncome(), user.getCreditRating(), user.getBanks(), user.getCreditAccounts(), user.getPaymentAccounts());
 	}
 
