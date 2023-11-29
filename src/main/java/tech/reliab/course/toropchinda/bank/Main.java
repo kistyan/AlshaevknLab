@@ -150,9 +150,6 @@ public class Main {
 
 		for (int bankIndex = 0; bankIndex < 5; bankIndex++) {
 			Bank bank = bankService.insert(bankIndex, "BANK_" + bankIndex);
-			for (int atmIndex = 0; atmIndex < 3; atmIndex++) {
-				int atmId = 3 * bankIndex + atmIndex;
-			}
 			for (int officeIndex = 0; officeIndex < 3; officeIndex++) {
 				int officeId = 3 * bankIndex + officeIndex;
 				BankOffice office = bankOfficeService.insert(officeId, "BANK_" + bankIndex);

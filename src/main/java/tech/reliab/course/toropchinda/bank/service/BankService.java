@@ -1,6 +1,8 @@
 package tech.reliab.course.toropchinda.bank.service;
 
 import tech.reliab.course.toropchinda.bank.entity.Bank;
+import tech.reliab.course.toropchinda.bank.entity.BankOffice;
+import tech.reliab.course.toropchinda.bank.entity.User;
 
 import java.util.ArrayList;
 import java.util.function.Function;
@@ -16,4 +18,8 @@ public interface BankService {
 	void update(Function<Bank, Boolean> filter, Consumer<Bank> action);
 
 	int getFreeId();
+
+	BankOffice addOffice(Bank bank);
+
+	void addClient(Bank bank, User user);
 }
