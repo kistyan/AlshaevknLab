@@ -15,8 +15,8 @@ public class Employee {
 		this.id = id;
 		this.fullName = fullName;
 		this.birthDate = birthDate;
-		jobTitle = new String();
 		bank = null;
+		jobTitle = new String();
 		office = null;
 		isWorksRemotely = isGivingLoan = false;
 		salary = 0;
